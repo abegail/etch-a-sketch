@@ -1,11 +1,22 @@
-container = document.querySelector('.container');
+const container = document.querySelector('.container');
+const specifySquaresBtn = document.querySelector('.specifySquaresBtn');
+let squaresPerSide = 16;
 
 window.onload = function() {
     addSquares();
 }
 
+specifySquaresBtn.addEventListener('click', () => {
+    squaresPerSide = parseInt(prompt('Enter number of squares per side (100 max):'));
+    if (squaresPerSide > 100) {
+        alert('Max size exceeded!');
+    } else {
+        removeSquares();
+        addSquares();
+    }
+})
+
 function addSquares() {
-    let squaresPerSide = parseInt(prompt('How many squares do you want?'));
     numberOfSquares = squaresPerSide * squaresPerSide;
 
     let squareSideLength = 512 / squaresPerSide;
@@ -24,4 +35,10 @@ function addSquares() {
             box.classList.add('mouseOver');
         });
     })
+}
+
+function removeSquares() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
 }
