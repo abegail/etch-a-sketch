@@ -1,1 +1,1 @@
-# etch-a-sketch
+Etch A Sketch simulator built with HTML, CSS, and JavaScript.
