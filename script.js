@@ -1,6 +1,3 @@
-// startButton = document.querySelector('.start');
-// startButton.addEventListener('click', addSquares);
-
 container = document.querySelector('.container');
 
 window.onload = function() {
@@ -8,11 +5,17 @@ window.onload = function() {
 }
 
 function addSquares() {
- //   let numberOfSquares = parseInt(prompt('How many squares do you want?'));
-    numberOfSquares = 256;
+    let squaresPerSide = parseInt(prompt('How many squares do you want?'));
+    numberOfSquares = squaresPerSide * squaresPerSide;
+
+    let squareSideLength = 512 / squaresPerSide;
+    console.log(squareSideLength);
+
     for (i = 0; i < numberOfSquares; i++) {
         var square = document.createElement('div');
         square.className = 'square';
+        square.style.height = squareSideLength+'px';
+        square.style.width = squareSideLength+'px';
         container.appendChild(square);
     }
     const squares = document.querySelectorAll('.square');

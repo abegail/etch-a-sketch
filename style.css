@@ -5,19 +5,16 @@
 }
 
 .container {
-    width: 514px;
-    height: 514px;
-    border: 1px solid black;
+    width: 516px;
+    height: 516px;
+    border: 2px solid black;
     margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.square,
-.test {
-    border: 1px solid black;
-    width: 32px;
-    height: 32px;
+.square {
+    border: 1px solid 	#D3D3D3;
 }
 
 .mouseOver {
